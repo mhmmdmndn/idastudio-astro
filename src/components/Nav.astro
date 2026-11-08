@@ -1,0 +1,61 @@
+---
+const waNumber = "6281229000001"; // placeholder — ganti nomor real
+const waMsg = encodeURIComponent("Halo IDA Studio, saya mau konsultasi jadwal foto 😊");
+const waHref = `https://wa.me/${waNumber}?text=${waMsg}`;
+---
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#FDF8F3]/80 border-b border-[#E8DDD3]/70">
+  <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[64px] sm:h-[72px]">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 rounded-xl bg-[#1A1A18] text-[#FDF8F3] grid place-items-center font-semibold tracking-tight text-[15px] group-hover:bg-[#C45A3C] transition-colors">IDA</div>
+      <div class="leading-none">
+        <div class="serif text-[18px] font-semibold tracking-tight -mb-0.5">IDA STUDIO</div>
+        <div class="text-[10px] tracking-[0.18em] text-[#8A7E74] font-medium">GROBOGAN • EST 2018</div>
+      </div>
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hidden lg:flex items-center gap-7 text-[13.5px] font-medium text-[#2B2B28]">
+      <a href="#layanan" class="hover:text-[#C45A3C] transition">Layanan</a>
+      <a href="#galeri" class="hover:text-[#C45A3C] transition">Galeri</a>
+      <a href="#harga" class="hover:text-[#C45A3C] transition">Paket & Harga</a>
+      <a href="#testimoni" class="hover:text-[#C45A3C] transition">Testimoni</a>
+      <a href="#faq" class="hover:text-[#C45A3C] transition">FAQ</a>
+    </nav>
+
+    <!-- Right -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <div class="hidden sm:flex flex-col items-end leading-none mr-1">
+        <span class="text-[11px] tracking-widest text-[#8A7E74] font-medium">BUKA SETIAP HARI</span>
+        <span class="text-[13px] font-semibold">09:00 — 17:00 WIB</span>
+      </div>
+      <a href={waHref} target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-[#C45A3C] hover:bg-[#A84A30] text-white px-4 sm:px-5 py-2.5 text-[13px] font-semibold shadow-[0_8px_24px_rgba(196,90,60,0.28)] transition">
+        <span class="hidden sm:inline">Chat WhatsApp</span><span class="sm:hidden">WhatsApp</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8l5 5 5-5"/><path d="M4 6h16v12H4z"/></svg>
+      </a>
+      <!-- mobile menu button -->
+      <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full border border-[#E8DDD3] grid place-items-center bg-white/60 hover:bg-white transition" aria-label="Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A18" stroke-width="1.7"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile drawer -->
+  <div id="mobileNav" class="hidden lg:hidden border-t border-[#E8DDD3] bg-[#FDF8F3]">
+    <nav class="px-4 py-4 flex flex-col gap-1 text-[14px] font-medium">
+      <a href="#layanan" class="py-2.5 px-3 rounded-xl hover:bg-white transition">Layanan</a>
+      <a href="#galeri" class="py-2.5 px-3 rounded-xl hover:bg-white transition">Galeri</a>
+      <a href="#harga" class="py-2.5 px-3 rounded-xl hover:bg-white transition">Paket & Harga</a>
+      <a href="#testimoni" class="py-2.5 px-3 rounded-xl hover:bg-white transition">Testimoni</a>
+      <a href="#faq" class="py-2.5 px-3 rounded-xl hover:bg-white transition">FAQ</a>
+      <div class="pt-3 mt-1 border-t border-[#E8DDD3] flex items-center justify-between text-[12px] text-[#8A7E74]"><span>📍 Mangunrejo / Pulokulon, Grobogan</span><span>09:00-17:00</span></div>
+    </nav>
+  </div>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => nav?.classList.toggle('hidden'));
+    nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.add('hidden')));
+  </script>
+</header>

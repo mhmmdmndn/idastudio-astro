@@ -1,0 +1,53 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "IDA Studio Foto & Rental Kamera — One Click, Thousands Of Memories",
+  description = "Studio foto Grobogan (Mangunrejo / Pulokulon) — buka setiap hari 09:00–17:00. Personal, Family, Couple, Self-Photo, Pasfoto, hingga Jasa Edit Foto. WA: 0812-xxxx-xxxx"
+} = Astro.props;
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,soft,wght@9..144,0..1,0,100..900;1,100..900&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-[#FDF8F3] text-[#1A1A18] antialiased selection:bg-[#C45A3C] selection:text-white">
+    <slot />
+    <style is:global>
+      @import "tailwindcss";
+      :root {
+        --cream: #FDF8F3;
+        --charcoal: #1A1A18;
+        --terra: #C45A3C;
+        --terra-dark: #A84A30;
+        --line: #E8DDD3;
+      }
+      * { scroll-behavior: smooth; }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: var(--cream);
+        color: var(--charcoal);
+      }
+      h1,h2,h3,.serif {
+        font-family: 'Fraunces', 'Instrument Serif', Georgia, serif;
+        letter-spacing: -0.02em;
+      }
+      .serif-display {
+        font-family: 'Instrument Serif', serif;
+      }
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-thumb { background: #D9C7B6; border-radius: 999px; }
+      ::-webkit-scrollbar-track { background: #FDF8F3; }
+    </style>
+  </body>
+</html>
